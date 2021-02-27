@@ -1,4 +1,3 @@
-# sudo required to run Docker commands
 sudo: required
 services:
   - docker
@@ -6,6 +5,5 @@ services:
 before_install:
   - docker build -t raminblair/docker-react -f Dockerfile.dev .
 
-# coverage flag causes npm test to exist, otherwise Travis will hang waiting for test results
 script:
   - docker run raminblair/docker-react npm run test -- --coverage
